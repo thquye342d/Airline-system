@@ -1,0 +1,135 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class booking{
+	int b_id,pasp,age,nic,weight,fnum,t_seats,a_seats,pl_id,a,b,seat_num;
+	string name,gender,dest,d_place,d_time,d_date;
+	/* booking id=b_id
+	   passport number=pasp
+	   age=age
+	   CNIC=nic
+	   lauggae weight-weight
+	   Number of available flights=fnum
+	   total seats=t_seats
+	   available seats=a_seats
+	   plane id=pl_id
+	   passenger name=name
+	   destination=dest
+	   departure place=d_place
+	   departure time=d_time*/
+	   
+	   
+	public:
+		void set_data(){
+		cout<<"***Enter Passengers name***"<<endl;
+		cin>>name;
+		cout<<"***booking id***"<<endl;
+		cin>>b_id;
+		cout<<"***Enter passport number***"<<endl;
+		cin>>pasp;
+		cout<<"***Enetr passenger's Gender***"<<endl;
+		cin>>gender;
+		cout<<"***Enter the weight of lauguage in kg.Importan note if weight will more hen 15kg a tex of 15% will applied per kg"<<endl;
+		cin>>weight;
+		cout<<"Enter  plane id in which seat is allocated"<<endl;
+		cin>>pl_id;
+		cout<<"Enter alloated seat numbber"<<endl;
+		cin>>seat_num;
+	
+				}
+	 void set_planedata(){
+	 		cout<<"Enter the number of available flights"<<endl;
+		cin>>fnum;
+		for(int i=0;i<fnum;i++){
+			cout<<"Enter Plane ID==>";
+			cin>>pl_id;
+			cout<<"Enter Destination of plane==>";
+			cin>>dest;
+			cout<<"Deperture place==>";
+			cin>>d_place;
+	 	    cout<<"Enter Departure time==>";
+	 	    cin>>d_time;
+	 	    cout<<"Enter departure data==>";
+	 	    cin>>d_date;
+	 	    cout<<"Enter total seats==>";
+	 	    cin>>t_seats;
+	 	    cout<<"Enter available seats==>";
+	 	    cin>>a_seats;}
+	 	    cout<<"Press 1 to add new Airplane and 2 to edit informations of current plane"<<endl;
+	 	    cin>>a;
+	 	    if(a=1){
+	 	    	cout<<"Enter Plane ID==>";
+			cin>>pl_id;
+			cout<<"Enter Destination of plane==>";
+			cin>>dest;
+			cout<<"Deperture place==>";
+			cin>>d_place;
+	 	    cout<<"Enter Departure time==>";
+	 	    cin>>d_time;
+	 	    cout<<"Enter departure data==>";
+	 	    cin>>d_date;
+	 	    cout<<"Enter total seats==>";
+	 	    cin>>t_seats;
+	 	    cout<<"Enter available seats==>";
+	 	    cin>>a_seats;
+			 }
+			 else if(a=2){
+			 	cout<<"Enter Plane ID to edit ==>";
+			cin>>pl_id;
+			cout<<"Enter Destination of plane==>";
+			cin>>dest;
+			cout<<"Deperture place==>";
+			cin>>d_place;
+	 	    cout<<"Enter Departure time==>";
+	 	    cin>>d_time;
+	 	    cout<<"Enter departure data==>";
+	 	    cin>>d_date;
+	 	    cout<<"Enter total seats==>";
+	 	    cin>>t_seats;
+	 	    cout<<"Enter available seats==>";
+	 	    cin>>a_seats;
+			 }
+			 else {
+			 	cout<<"move to next function"<<endl;}
+			 	
+	 	
+	 }
+	 void show_data(){
+	 	cout<<"customer name "<<name;
+	 	cout<<"\n Booking ID: "<<b_id;
+	 	cout<<"\n Passport number: "<<pasp;
+	 	cout<<"\n Gender: "<<gender;
+	 	cout<<"\n CNIC : "<<nic;
+	 	cout<<"\n Age is: "<<age;
+	 	if (weight<=15){
+	 		cout<<"\nTotal charges w.r.t you lauggage weight at the ate PKR 100 per kg are"<<weight*15;}
+	 	if( weight>15){
+	 		cout<<"\nTotal charges of you lauggage are: "<<(weight*100)+(weight*100*0.15);
+	 		
+	 	
+		 } }
+		 void bookingsat(){
+		 	
+		 
+		 cout<<"\nPress 3 to cancel booking:"<<endl;
+		 cin>>b;
+		 if(b=3){
+		 	
+		 		
+			 
+			 cout<<"Booking with id==>"<<b_id<<" of customer==> "<<name<<" with pasport number==> "<<pasp<<" is cancled"<<endl;
+		 } 
+		 else{
+		 	cout<<"Your ticket is booked"<<endl;
+		 }
+		 }
+	};
+	
+	
+int main(){
+booking b1;
+b1.set_planedata();
+b1.set_data();
+b1.show_data();
+b1.bookingsat();}
+
